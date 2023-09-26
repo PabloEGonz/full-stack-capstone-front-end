@@ -1,9 +1,12 @@
+import React from 'react';
 import Login from '../components/Login';
+import Signin from '../components/Signin';
 
-const Sessions = () => (
+const Session = () => (
   <div>
     <Login />
+    <Signin />
   </div>
 );
 
-export default Sessions;
+export default Session;
