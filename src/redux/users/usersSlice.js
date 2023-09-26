@@ -16,6 +16,27 @@ export const fetchUser = createAsyncThunk(
     }
   },
 );
+
+export const createUser = createAsyncThunk(
+  'users/createUser',
+  async (data) => {
+    try {
+      const response = await fetch(`${BaseApi}users/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) {
+        throw new Error('something went wrong');
+      }
+      return await response.json();
+    } catch (error) {
+      return error;
+    }
+  },
+);
 const initialState = {
   id: null,
   user_name: null,
@@ -26,13 +47,21 @@ export const usersSlice = createSlice({
   name: 'user',
   initialState,
   extraReducers: (builder) => {
-    builder.addCase(fetchUser.fulfilled, (state, { payload }) => {
-      console.log(payload.user_name);
-      state.id = payload.id;
-      state.user_name = payload.user_name;
-      state.name = payload.name;
-    })
+    builder
+      .addCase(fetchUser.fulfilled, (state, { payload }) => {
+        state.id = payload.id;
+        state.user_name = payload.user_name;
+        state.name = payload.name;
+      })
       .addCase(fetchUser.rejected, (state) => {
+        state.loginError = true;
+      })
+      .addCase(createUser.fulfilled, (state, { payload }) => {
+        state.id = payload.id;
+        state.user_name = payload.user_name;
+        state.name = payload.name;
+      })
+      .addCase(createUser.rejected, (state) => {
         state.loginError = true;
       });
   },
