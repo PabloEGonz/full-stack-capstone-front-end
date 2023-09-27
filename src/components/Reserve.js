@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { createReserve } from '../redux/reservations/reservationsSlice';
 import { getCars } from '../redux/cars/carsSlice';
 
 const Reservation = () => {
-  cars = useSelector((state) => state.cars.cars);
-  users = useSelector((state) => state.users.users);
+  const cars = useSelector((state) => state.cars.cars);
+  const user = useSelector((state) => state.user.user);
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -14,36 +16,41 @@ const Reservation = () => {
   }, [dispatch]);
 
   const [reserve, setReserve] = useState({
-    userName: user?.userName || null,
+    userName: user?.user || null,
+    user_id: 2,
     reservationDate: '',
     dueDate: '',
     serviceFee: '',
     car: '',
   });
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
     setReserve((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
 
-  const submit = async (event) => {
-    event.preventDefault();
+  const submit = async (e) => {
+    e.preventDefault();
     const {
       reservationDate, dueDate, serviceFee, car,
     } = reserve;
+
     if (!reservationDate || !dueDate || !serviceFee || !car) {
-      alert('Please fill all fields!');
+      alert('Please fill in all the required fields.');
       return;
     }
 
     try {
-      await dispatch(createReserve({ ...reserve, userName: user.userName }));
+      // Dispatch the createReserve action to make the reservation request
+      await dispatch(createReserve({ ...reserve, userName: user }));
       alert('Reservation created successfully!');
+      navigate('/reservations'); // Redirect to the reservation page after successful reservation
     } catch (error) {
-      alert('Error creating reservation!');
+      alert('Error occurred while making a reservation.');
+      console.error(error);
     }
   };
 
