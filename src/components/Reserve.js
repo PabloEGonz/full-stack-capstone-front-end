@@ -21,6 +21,7 @@ const Reservation = () => {
   }, [dispatch]);
 
   const [reserve, setReserve] = useState({
+    user_id: userId,
     reservation_date: '10-11-2023',
     due_date: '',
     service_fee: '',
@@ -37,7 +38,7 @@ const Reservation = () => {
 
   const submit = () => {
     console.log(reserve);
-    dispatch(createReserve(reserve, '1'));
+    dispatch(createReserve(reserve));
 
     // e.preventDefault();
     // const {

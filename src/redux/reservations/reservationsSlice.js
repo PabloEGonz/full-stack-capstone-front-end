@@ -3,12 +3,12 @@ import BaseApi from '../url';
 
 // Create async thunks
 export const createReserve = createAsyncThunk('reservations/createReserve',
-  async (data, idForUser) => {
+  async (data) => {
     try {
       console.log('this is what is being sent:');
-      console.log(idForUser);
+      console.log(data.user_id);
 
-      const response = await fetch(`${BaseApi}users/${idForUser}/reservations`, {
+      const response = await fetch(`${BaseApi}users/${data.user_id}/reservations`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
