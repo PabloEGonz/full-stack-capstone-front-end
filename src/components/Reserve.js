@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
 // import { useNavigate } from 'react-router-dom';
 import { createReserve, getReservations } from '../redux/reservations/reservationsSlice';
 import { getCars } from '../redux/cars/carsSlice';
@@ -7,8 +8,8 @@ import { getCars } from '../redux/cars/carsSlice';
 const Reservation = () => {
   const cars = useSelector((state) => state.cars.cars);
   // const user = useSelector((state) => state.user.id);
-  const userPresent = useSelector((state) => state.user.id);
-  console.log(userPresent);
+  const userId = useSelector((state) => state.user.id);
+  console.log(userId);
 
   // const navigate = useNavigate();
 
@@ -16,11 +17,11 @@ const Reservation = () => {
 
   useEffect(() => {
     dispatch(getCars());
-    dispatch(getReservations(userPresent));
+    dispatch(getReservations(userId));
   }, [dispatch]);
 
   const [reserve, setReserve] = useState({
-    reservation_date: '',
+    reservation_date: '10-11-2023',
     due_date: '',
     service_fee: '',
     car_id: '',
@@ -36,7 +37,7 @@ const Reservation = () => {
 
   const submit = () => {
     console.log(reserve);
-    dispatch(createReserve(reserve, userPresent));
+    dispatch(createReserve(reserve, '1'));
 
     // e.preventDefault();
     // const {
@@ -67,7 +68,7 @@ const Reservation = () => {
           <input
             type="date"
             id="reservationDate"
-            name="reservationDate"
+            name="reservation_date"
             value={reserve.reservation_date}
             onChange={handleInputChange}
             placeholder="Reservation Date"
@@ -89,7 +90,7 @@ const Reservation = () => {
           <input
             type="number"
             id="serviceFee"
-            name="serviceFee"
+            name="service_fee"
             value={reserve.service_fee}
             onChange={handleInputChange}
             placeholder="Service Fee"
@@ -99,7 +100,7 @@ const Reservation = () => {
         <div>
           <select
             id="car"
-            name="car"
+            name="car_id"
             value={reserve.car_id}
             onChange={handleInputChange}
             required
@@ -112,7 +113,7 @@ const Reservation = () => {
             ))}
           </select>
         </div>
-        <button type="button" onClick={() => submit}>Create Reservation</button>
+        <button type="button" onClick={submit}>Create Reservation</button>
       </form>
     </div>
   );
