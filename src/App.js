@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import Home from './pages/Home';
 import Session from './pages/Session';
+import AddCar from './pages/AddCar';
 
 const Navbar = () => (
   <>
@@ -53,6 +54,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Navbar />}>
       <Route index element={<Home />} />
       <Route path="/session" element={<Session />} />
+      <Route path="/cars/new" element={<AddCar />} />
     </Route>,
   ),
 );
