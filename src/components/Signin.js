@@ -15,31 +15,44 @@ const Signin = () => {
   };
   return (
     <form action="log-in" method="post">
-      <label htmlFor="name">
-        Name
+      <div className="form-outline mb-4">
         <input
+          className="form-control"
           type="text"
-          name="name"
-          id="name"
+          name="registerName"
+          id="registerName"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-      </label>
-      <label htmlFor="user-name">
-        User name
+        <label
+          htmlFor="registerName"
+          className="form-label"
+        >
+          Name
+        </label>
+      </div>
+      <div className="form-outline mb-4">
         <input
+          className="form-control"
           type="text"
-          name="user-name"
-          id="user-name"
+          name="registerUserName"
+          id="registerUserName"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
         />
-      </label>
+        <label
+          htmlFor="registerUserName"
+          className="form-label"
+        >
+          User name
+        </label>
+      </div>
       <button
         type="button"
+        className="btn btn-primary btn-block mb-3"
         onClick={handleSubmit}
       >
-        Log in
+        Sign in
       </button>
     </form>
   );

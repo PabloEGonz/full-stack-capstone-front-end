@@ -7,22 +7,40 @@ const Login = () => {
   const dispatch = useDispatch();
   return (
     <form action="log-in" method="post">
-      <label htmlFor="user-name">
-        User name
+      <div className="form-outline mb-4">
         <input
+          className="form-control"
           type="text"
-          name="user-name"
-          id="user-name"
+          name="loginUserName"
+          id="loginUserName"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
         />
-      </label>
+        <label
+          htmlFor="loginUserName"
+          className="form-label"
+        >
+          User name
+        </label>
+      </div>
+      <div className="row mb-4">
+        <div className="col-md-6 d-flex justify-content-center">
+          <a href="#!">Forgot password?</a>
+        </div>
+      </div>
       <button
         type="button"
+        className="btn btn-primary btn-block mb-4"
         onClick={() => dispatch(fetchUser(userName))}
       >
         Log in
       </button>
+      <div className="text-center">
+        <p>
+          Not a member?
+          <a href="#!">Register</a>
+        </p>
+      </div>
     </form>
   );
 };
