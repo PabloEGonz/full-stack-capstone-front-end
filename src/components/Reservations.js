@@ -5,6 +5,7 @@ import { getReservations } from '../redux/reservations/reservationsSlice';
 
 const Reservations = () => {
   const { reservations, isLoading, error } = useSelector((store) => store.reservations);
+  const user = useSelector((state) => state.user.id);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,7 +26,13 @@ const Reservations = () => {
       </div>
     );
   }
-  return (
+  if (!user) {
+    return (
+      <div className="error-container">
+        <h2>Please login to see your reservations</h2>
+      </div>
+    );
+  } return (
     <div className="reservation-page">
       <h1 className="reserve-title">My Reservations</h1>
       <Swiper>
@@ -67,4 +74,5 @@ const Reservations = () => {
     </div>
   );
 };
+
 export default Reservations;

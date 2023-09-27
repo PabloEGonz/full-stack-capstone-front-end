@@ -1,35 +1,44 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-import BaseApi from '../url';
+const API_BASE_URL = 'http://localhost:3000/api';
 
 // Create async thunks
-export const createReserve = createAsyncThunk('reservations/createReserve', async (payload) => {
-  const res = {
-    username: payload.username,
-    car_id: payload.car_id,
-    reservation_date: payload.reservation_date,
-    due_date: payload.due_date,
-    service_fee: payload.service_fee,
-  };
-  const response = await fetch(`${BaseApi}/reservations`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(res),
+export const createReserve = createAsyncThunk('reservations/createReserve',
+  async (data, userId) => {
+    try {
+      console.log(JSON.stringify(data));
+
+      const response = await fetch(`${API_BASE_URL}/users/${userId}/reservations`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+      // Handle non-success HTTP status codes here
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const res = await response.json();
+
+      console.log(res);
+      return res;
+    } catch (error) {
+    // Handle any other errors that may occur during the request
+      return error.message;
+    }
   });
-  const data = await response.json();
-  return data;
-});
 
 export const getReserve = createAsyncThunk('reservations/getReserve', async () => {
-  const response = await fetch(`${BaseApi}/reservations`);
+  const response = await fetch(`${API_BASE_URL}/reservations`);
   const data = await response.json();
   return data;
 });
 
 export const deleteReserve = createAsyncThunk('reservations/deleteReserve', async (payload) => {
-  const response = await fetch(`${BaseApi}/reservations/${payload}`, {
+  const response = await fetch(`${API_BASE_URL}/reservations/${payload}`, {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
   });
@@ -37,9 +46,10 @@ export const deleteReserve = createAsyncThunk('reservations/deleteReserve', asyn
   return data;
 });
 
-export const getReservations = createAsyncThunk('reservations/fetchReservations', async () => {
+export const getReservations = createAsyncThunk('reservations/fetchReservations', async (userId) => {
+  console.log('Fetching reservations for user with id:', userId);
   try {
-    const response = await fetch('http://localhost:3000/api/reservations');
+    const response = await fetch(`${API_BASE_URL}/users/${userId}/reservations`);
     if (!response.ok) {
       throw new Error(`The request failed with status ${response.status}`);
     }

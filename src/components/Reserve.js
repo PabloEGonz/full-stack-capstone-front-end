@@ -1,27 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { createReserve } from '../redux/reservations/reservationsSlice';
+// import { useNavigate } from 'react-router-dom';
+import { createReserve, getReservations } from '../redux/reservations/reservationsSlice';
 import { getCars } from '../redux/cars/carsSlice';
 
 const Reservation = () => {
   const cars = useSelector((state) => state.cars.cars);
-  const user = useSelector((state) => state.user.user);
+  // const user = useSelector((state) => state.user.id);
+  const userPresent = useSelector((state) => state.user.id);
+  console.log(userPresent);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getCars());
+    dispatch(getReservations(userPresent));
   }, [dispatch]);
 
   const [reserve, setReserve] = useState({
-    userName: user?.user || null,
-    user_id: 2,
-    reservationDate: '',
-    dueDate: '',
-    serviceFee: '',
-    car: '',
+    reservation_date: '',
+    due_date: '',
+    service_fee: '',
+    car_id: '',
   });
 
   const handleInputChange = (e) => {
@@ -32,38 +34,41 @@ const Reservation = () => {
     }));
   };
 
-  const submit = async (e) => {
-    e.preventDefault();
-    const {
-      reservationDate, dueDate, serviceFee, car,
-    } = reserve;
+  const submit = () => {
+    console.log(reserve);
+    dispatch(createReserve(reserve, userPresent));
 
-    if (!reservationDate || !dueDate || !serviceFee || !car) {
-      alert('Please fill in all the required fields.');
-      return;
-    }
+    // e.preventDefault();
+    // const {
+    //   reservationDate, dueDate, serviceFee, car,
+    // } = reserve;
 
-    try {
-      // Dispatch the createReserve action to make the reservation request
-      await dispatch(createReserve({ ...reserve, userName: user }));
-      alert('Reservation created successfully!');
-      navigate('/reservations'); // Redirect to the reservation page after successful reservation
-    } catch (error) {
-      alert('Error occurred while making a reservation.');
-      console.error(error);
-    }
+    // if (!reservationDate || !dueDate || !serviceFee || !car) {
+    //   alert('Please fill in all the required fields.');
+    //   return;
+    // }
+
+    // try {
+    //   // Dispatch the createReserve action to make the reservation request
+    //   await dispatch(createReserve({ ...reserve, userId: user }));
+    //   alert('Reservation created successfully!');
+    //   navigate('/reservations'); // Redirect to the reservation page after successful reservation
+    // } catch (error) {
+    //   alert('Error occurred while making a reservation.');
+    //   console.error(error);
+    // }
   };
 
   return (
     <div>
       <h2>Create Reservation</h2>
-      <form onSubmit={submit}>
+      <form>
         <div>
           <input
             type="date"
             id="reservationDate"
             name="reservationDate"
-            value={reserve.reservationDate}
+            value={reserve.reservation_date}
             onChange={handleInputChange}
             placeholder="Reservation Date"
             required
@@ -73,8 +78,8 @@ const Reservation = () => {
           <input
             type="date"
             id="dueDate"
-            name="dueDate"
-            value={reserve.dueDate}
+            name="due_date"
+            value={reserve.due_date}
             onChange={handleInputChange}
             placeholder="Due Date"
             required
@@ -85,7 +90,7 @@ const Reservation = () => {
             type="number"
             id="serviceFee"
             name="serviceFee"
-            value={reserve.serviceFee}
+            value={reserve.service_fee}
             onChange={handleInputChange}
             placeholder="Service Fee"
             required
@@ -95,7 +100,7 @@ const Reservation = () => {
           <select
             id="car"
             name="car"
-            value={reserve.car}
+            value={reserve.car_id}
             onChange={handleInputChange}
             required
           >
@@ -107,7 +112,7 @@ const Reservation = () => {
             ))}
           </select>
         </div>
-        <button type="submit">Create Reservation</button>
+        <button type="button" onClick={() => submit}>Create Reservation</button>
       </form>
     </div>
   );
