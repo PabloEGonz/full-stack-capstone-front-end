@@ -4,6 +4,8 @@ import {
 } from 'react-router-dom';
 import Home from './pages/Home';
 import Session from './pages/Session';
+// import Reservations from './components/Reservations';
+import Reserve from './components/Reserve';
 
 const Navbar = () => (
   <>
@@ -53,6 +55,8 @@ const router = createBrowserRouter(
     <Route path="/" element={<Navbar />}>
       <Route index element={<Home />} />
       <Route path="/session" element={<Session />} />
+      <Route path="/reservations/new" element={<Reserve />} />
+      {/* <Route path="/reservations" element={<Reservations />} /> */}
     </Route>,
   ),
 );
