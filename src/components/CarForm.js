@@ -6,7 +6,7 @@ const CarForm = () => {
     description: '',
     image: '',
     location: '',
-    daily_rate: 0.00,
+    daily_rate: '',
     car_type: '',
   });
   return (
