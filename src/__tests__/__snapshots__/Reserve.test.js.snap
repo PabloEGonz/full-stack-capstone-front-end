@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CarReservation component should render correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="container mt-5"
+      >
+        <h2>
+          Create Reservation
+        </h2>
+        <form>
+          <div
+            class="mb-3"
+          >
+            <label
+              class="form-label"
+              for="reservationDate"
+            >
+              Reservation Date
+            </label>
+            <input
+              class="form-control"
+              id="reservationDate"
+              name="reservation_date"
+              required=""
+              type="date"
+              value="10-11-2023"
+            />
+          </div>
+          <div
+            class="mb-3"
+          >
+            <label
+              class="form-label"
+              for="dueDate"
+            >
+              Due Date
+            </label>
+            <input
+              class="form-control"
+              id="dueDate"
+              name="due_date"
+              required=""
+              type="date"
+              value=""
+            />
+          </div>
+          <div
+            class="mb-3"
+          >
+            <label
+              class="form-label"
+              for="serviceFee"
+            >
+              Service Fee
+            </label>
+            <input
+              class="form-control"
+              id="serviceFee"
+              name="service_fee"
+              required=""
+              type="number"
+              value=""
+            />
+          </div>
+          <div
+            class="mb-3"
+          >
+            <label
+              class="form-label"
+              for="car"
+            >
+              Select a Car
+            </label>
+            <select
+              class="form-select"
+              id="car"
+              name="car_id"
+              required=""
+            >
+              <option
+                value=""
+              >
+                Select a car
+              </option>
+            </select>
+          </div>
+          <button
+            class="btn btn-primary"
+            type="button"
+          >
+            Create Reservation
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="container mt-5"
+    >
+      <h2>
+        Create Reservation
+      </h2>
+      <form>
+        <div
+          class="mb-3"
+        >
+          <label
+            class="form-label"
+            for="reservationDate"
+          >
+            Reservation Date
+          </label>
+          <input
+            class="form-control"
+            id="reservationDate"
+            name="reservation_date"
+            required=""
+            type="date"
+            value="10-11-2023"
+          />
+        </div>
+        <div
+          class="mb-3"
+        >
+          <label
+            class="form-label"
+            for="dueDate"
+          >
+            Due Date
+          </label>
+          <input
+            class="form-control"
+            id="dueDate"
+            name="due_date"
+            required=""
+            type="date"
+            value=""
+          />
+        </div>
+        <div
+          class="mb-3"
+        >
+          <label
+            class="form-label"
+            for="serviceFee"
+          >
+            Service Fee
+          </label>
+          <input
+            class="form-control"
+            id="serviceFee"
+            name="service_fee"
+            required=""
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="mb-3"
+        >
+          <label
+            class="form-label"
+            for="car"
+          >
+            Select a Car
+          </label>
+          <select
+            class="form-select"
+            id="car"
+            name="car_id"
+            required=""
+          >
+            <option
+              value=""
+            >
+              Select a car
+            </option>
+          </select>
+        </div>
+        <button
+          class="btn btn-primary"
+          type="button"
+        >
+          Create Reservation
+        </button>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
-// import { useNavigate } from 'react-router-dom';
 import { createReserve, getReservations } from '../redux/reservations/reservationsSlice';
 import { getCars } from '../redux/cars/carsSlice';
+import '../css/Reservation.css';
 
 const Reservation = () => {
   const cars = useSelector((state) => state.cars.cars);
-  // const user = useSelector((state) => state.user.id);
   const userId = useSelector((state) => state.user.id);
 
   const dispatch = useDispatch();
@@ -21,7 +19,7 @@ const Reservation = () => {
 
   const [reserve, setReserve] = useState({
     user_id: userId,
-    reservation_date: '10-11-2023',
+    reservation_date: '',
     due_date: '',
     service_fee: '',
     car_id: '',
@@ -43,7 +41,7 @@ const Reservation = () => {
   return (
     <div className="container mt-5">
       <h2>Create Reservation</h2>
-      <form>
+      <form className="reservation-form">
         <div className="mb-3">
           <label htmlFor="reservationDate" className="form-label">Reservation Date</label>
           <input
@@ -70,15 +68,18 @@ const Reservation = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="serviceFee" className="form-label">Service Fee</label>
-          <input
-            type="number"
-            id="serviceFee"
-            name="service_fee"
-            value={reserve.service_fee}
-            onChange={handleInputChange}
-            className="form-control"
-            required
-          />
+          <div className="input-group">
+            <span className="input-group-text">$</span>
+            <input
+              type="number"
+              id="serviceFee"
+              name="service_fee"
+              value={reserve.service_fee}
+              onChange={handleInputChange}
+              className="form-control"
+              required
+            />
+          </div>
         </div>
         <div className="mb-3">
           <label htmlFor="car" className="form-label">Select a Car</label>
