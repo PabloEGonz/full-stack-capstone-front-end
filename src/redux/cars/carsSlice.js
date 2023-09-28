@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import BaseApi from '../url';
 
 // Define an initial state
 const initialState = {
@@ -7,13 +8,10 @@ const initialState = {
   error: null,
 };
 
-// Define the API URL for fetching cars (adjust this URL as needed)
-const API_BASE_URL = 'http://localhost:3000/api';
-
 // Create an async thunk for fetching cars
 export const getCars = createAsyncThunk('cars/fetchCars', async () => {
   try {
-    const response = await fetch(`${API_BASE_URL}/cars`);
+    const response = await fetch(`${BaseApi}cars`);
     if (!response.ok) {
       throw new Error(`The request failed with status ${response.status}`);
     }
