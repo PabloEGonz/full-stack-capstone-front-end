@@ -41,48 +41,53 @@ const Reservation = () => {
   };
 
   return (
-    <div>
+    <div className="container mt-5">
       <h2>Create Reservation</h2>
       <form>
-        <div>
+        <div className="mb-3">
+          <label htmlFor="reservationDate" className="form-label">Reservation Date</label>
           <input
             type="date"
             id="reservationDate"
             name="reservation_date"
             value={reserve.reservation_date}
             onChange={handleInputChange}
-            placeholder="Reservation Date"
+            className="form-control"
             required
           />
         </div>
-        <div>
+        <div className="mb-3">
+          <label htmlFor="dueDate" className="form-label">Due Date</label>
           <input
             type="date"
             id="dueDate"
             name="due_date"
             value={reserve.due_date}
             onChange={handleInputChange}
-            placeholder="Due Date"
+            className="form-control"
             required
           />
         </div>
-        <div>
+        <div className="mb-3">
+          <label htmlFor="serviceFee" className="form-label">Service Fee</label>
           <input
             type="number"
             id="serviceFee"
             name="service_fee"
             value={reserve.service_fee}
             onChange={handleInputChange}
-            placeholder="Service Fee"
+            className="form-control"
             required
           />
         </div>
-        <div>
+        <div className="mb-3">
+          <label htmlFor="car" className="form-label">Select a Car</label>
           <select
             id="car"
             name="car_id"
             value={reserve.car_id}
             onChange={handleInputChange}
+            className="form-select"
             required
           >
             <option value="">Select a car</option>
@@ -93,7 +98,7 @@ const Reservation = () => {
             ))}
           </select>
         </div>
-        <button type="button" onClick={submit}>Create Reservation</button>
+        <button type="button" onClick={submit} className="btn btn-primary">Create Reservation</button>
       </form>
     </div>
   );
