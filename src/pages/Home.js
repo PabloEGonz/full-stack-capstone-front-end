@@ -1,9 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import CarCard from '../components/CarCard';
 
 const Home = () => {
+  const cars = useSelector((state) => state.cars.cars);
   const userPresent = useSelector((state) => state.user.id);
+  console.log(cars);
   if (!userPresent) {
     return (
       <div>
@@ -13,7 +16,12 @@ const Home = () => {
     );
   }
   return (
-    <h1>Home</h1>
+    <>
+      <h1>Home</h1>
+      { cars.map((car) => (
+        <CarCard key={car.id} car={car} />
+      ))}
+    </>
   );
 };
 export default Home;
