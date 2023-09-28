@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Login from '../components/Login';
 import Signin from '../components/Signin';
 
 const Session = () => {
+  const userPresent = useSelector((state) => state.user.id);
   const [logIn, SetLogIn] = useState('show active');
   const [signIn, SetSignIn] = useState('');
+  const navigate = useNavigate();
 
-  const toggleVissibility = (target, off) => {
+  useEffect(() => {
+    if (userPresent) {
+      navigate('/');
+    }
+  }, [navigate, userPresent]);
+  const toggleVissibility = (on, off) => {
     off(' ');
-    target('show active');
+    on('show active');
   };
   return (
-    <div className="container session-form">
+    <div className="container session-form pt-5">
       <ul className="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
         <li className="nav-item" role="presentation">
           <a

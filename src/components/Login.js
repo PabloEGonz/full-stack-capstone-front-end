@@ -23,11 +23,7 @@ const Login = () => {
           User name
         </label>
       </div>
-      <div className="row mb-4">
-        <div className="col-md-6 d-flex justify-content-center">
-          <a href="#!">Forgot password?</a>
-        </div>
-      </div>
+      <div className="row mb-4" />
       <button
         type="button"
         className="btn btn-primary btn-block mb-4"
@@ -36,6 +32,7 @@ const Login = () => {
         Log in
       </button>
       <div className="text-center">
+        <a href="#!">Forgot password?</a>
         <p>
           Not a member?
           <a href="#!">Register</a>

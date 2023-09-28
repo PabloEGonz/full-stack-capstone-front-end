@@ -52,6 +52,7 @@ export const usersSlice = createSlice({
         state.id = payload.id;
         state.user_name = payload.user_name;
         state.name = payload.name;
+        localStorage.setItem('user_name', JSON.stringify(payload.user_name));
       })
       .addCase(fetchUser.rejected, (state) => {
         state.loginError = true;
