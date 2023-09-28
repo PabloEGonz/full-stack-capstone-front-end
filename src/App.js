@@ -9,7 +9,7 @@ import Session from './pages/Session';
 import AddCar from './pages/AddCar';
 import Navbar from './components/Navbar';
 import { fetchUser } from './redux/users/usersSlice';
-import Reservations from './components/Reservations';
+import Reservations from './pages/Reservations';
 import Reserve from './components/Reserve';
 
 const Root = () => {
