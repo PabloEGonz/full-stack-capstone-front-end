@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
-// import { useNavigate } from 'react-router-dom';
 import { createReserve, getReservations } from '../redux/reservations/reservationsSlice';
 import { getCars } from '../redux/cars/carsSlice';
 
@@ -10,8 +8,6 @@ const Reservation = () => {
   // const user = useSelector((state) => state.user.id);
   const userId = useSelector((state) => state.user.id);
   console.log(userId);
-
-  // const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -39,26 +35,6 @@ const Reservation = () => {
   const submit = () => {
     console.log(reserve);
     dispatch(createReserve(reserve));
-
-    // e.preventDefault();
-    // const {
-    //   reservationDate, dueDate, serviceFee, car,
-    // } = reserve;
-
-    // if (!reservationDate || !dueDate || !serviceFee || !car) {
-    //   alert('Please fill in all the required fields.');
-    //   return;
-    // }
-
-    // try {
-    //   // Dispatch the createReserve action to make the reservation request
-    //   await dispatch(createReserve({ ...reserve, userId: user }));
-    //   alert('Reservation created successfully!');
-    //   navigate('/reservations'); // Redirect to the reservation page after successful reservation
-    // } catch (error) {
-    //   alert('Error occurred while making a reservation.');
-    //   console.error(error);
-    // }
   };
 
   return (
