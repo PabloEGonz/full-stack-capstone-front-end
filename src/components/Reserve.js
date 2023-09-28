@@ -9,14 +9,13 @@ const Reservation = () => {
   const cars = useSelector((state) => state.cars.cars);
   // const user = useSelector((state) => state.user.id);
   const userId = useSelector((state) => state.user.id);
-  console.log(userId);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getCars());
     dispatch(getReservations(userId));
-  }, [dispatch]);
+  }, [dispatch, userId]);
 
   const [reserve, setReserve] = useState({
     user_id: userId,
