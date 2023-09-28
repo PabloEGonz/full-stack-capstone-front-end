@@ -9,6 +9,8 @@ import Session from './pages/Session';
 import AddCar from './pages/AddCar';
 import Navbar from './components/Navbar';
 import { fetchUser } from './redux/users/usersSlice';
+// import Reservations from './components/Reservations';
+import Reserve from './components/Reserve';
 
 const Root = () => {
   const dispatch = useDispatch();
@@ -34,6 +36,8 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/session" element={<Session />} />
       <Route path="/cars/new" element={<AddCar />} />
+      <Route path="/reservations/new" element={<Reserve />} />
+      {/* <Route path="/reservations" element={<Reservations />} /> */}
     </Route>,
   ),
 );
