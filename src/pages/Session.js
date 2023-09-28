@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Login from '../components/Login';
 import Signin from '../components/Signin';
 
 const Session = () => {
+  const userPresent = useSelector((state) => state.user.id);
   const [logIn, SetLogIn] = useState('show active');
   const [signIn, SetSignIn] = useState('');
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    if (userPresent) {
+      navigate('/');
+    }
+  }, [navigate, userPresent]);
   const toggleVissibility = (target, off) => {
     off(' ');
     target('show active');
