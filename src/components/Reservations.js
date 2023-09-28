@@ -10,7 +10,7 @@ const Reservations = () => {
 
   useEffect(() => {
     dispatch(getReservations(user));
-  }, [dispatch]);
+  }, [dispatch, user]);
   if (isLoading) {
     return (
       <div className="loading">

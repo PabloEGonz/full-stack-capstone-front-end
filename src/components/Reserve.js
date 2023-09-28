@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 // import { useNavigate } from 'react-router-dom';
 import { createReserve, getReservations } from '../redux/reservations/reservationsSlice';
@@ -11,6 +12,7 @@ const Reservation = () => {
   const userId = useSelector((state) => state.user.id);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getCars());
@@ -33,9 +35,9 @@ const Reservation = () => {
     }));
   };
 
-  const submit = () => {
-    console.log(reserve);
-    dispatch(createReserve(reserve));
+  const submit = async () => {
+    await dispatch(createReserve(reserve));
+    navigate('/reservations');
   };
 
   return (
