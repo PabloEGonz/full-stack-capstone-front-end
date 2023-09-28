@@ -5,9 +5,6 @@ import BaseApi from '../url';
 export const createReserve = createAsyncThunk('reservations/createReserve',
   async (data) => {
     try {
-      console.log('this is what is being sent:');
-      console.log(data.user_id);
-
       const response = await fetch(`${BaseApi}users/${data.user_id}/reservations`, {
         method: 'POST',
         headers: {
@@ -23,7 +20,6 @@ export const createReserve = createAsyncThunk('reservations/createReserve',
 
       const res = await response.json();
 
-      console.log(res);
       return res;
     } catch (error) {
     // Handle any other errors that may occur during the request
@@ -47,7 +43,6 @@ export const deleteReserve = createAsyncThunk('reservations/deleteReserve', asyn
 });
 
 export const getReservations = createAsyncThunk('reservations/fetchReservations', async (userId) => {
-  console.log('Fetching reservations for user with id:', userId);
   try {
     const response = await fetch(`${BaseApi}/users/${userId}/reservations`);
     if (!response.ok) {
