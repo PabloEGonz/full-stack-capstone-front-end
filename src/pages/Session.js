@@ -15,12 +15,12 @@ const Session = () => {
       navigate('/');
     }
   }, [navigate, userPresent]);
-  const toggleVissibility = (target, off) => {
+  const toggleVissibility = (on, off) => {
     off(' ');
-    target('show active');
+    on('show active');
   };
   return (
-    <div className="container session-form">
+    <div className="container session-form pt-5">
       <ul className="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
         <li className="nav-item" role="presentation">
           <a
