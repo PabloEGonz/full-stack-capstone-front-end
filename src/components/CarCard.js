@@ -34,7 +34,7 @@ CarCard.propTypes = {
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
-    daily_rate: PropTypes.number.isRequired,
+    daily_rate: PropTypes.string.isRequired,
     car_type: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,
