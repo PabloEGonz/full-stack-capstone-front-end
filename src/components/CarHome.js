@@ -13,7 +13,7 @@ function CarHome() {
   }, [dispatch]);
 
   const handleCarDetail = (carId) => {
-    // Set the selectedCarId to the clicked car's ID 
+    // Set the selectedCarId to the clicked car's ID
     // Dispatch the getCarById action with the carId
     // dispatch(getCarById(carId)).catch((error) => {
     //   console.error('Error getting a car:', error);

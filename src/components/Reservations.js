@@ -10,7 +10,7 @@ const Reservations = () => {
 
   useEffect(() => {
     dispatch(getReservations(user));
-  }, [dispatch]);
+  }, [dispatch, user]);
   if (isLoading) {
     return (
       <div className="loading">
@@ -68,7 +68,6 @@ const Reservations = () => {
               <img src={reservation.car.image} alt={`${reservation.car.name}`} />
             </div>
           </SwiperSlide>
-
         ))}
       </Swiper>
     </div>

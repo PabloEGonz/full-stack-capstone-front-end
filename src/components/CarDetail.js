@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 function CarDetail() {
   const { carId } = useParams();
   const cars = useSelector((state) => state.cars.cars);
-  //console.log(cars);
-  //console.log(carId);
+  // console.log(cars);
+  // console.log(carId);
   // Find the specific car with the matching ID
   const car = cars.find((c) => c.id === Number(carId));
   console.log(car);
