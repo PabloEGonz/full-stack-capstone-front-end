@@ -43,9 +43,9 @@ const Reservations = () => {
       <div className="row">
         {reservations.map((reservation) => (
           <div className="col-md-6 col-lg-4 mb-4" key={reservation.id}>
-            <div className="card">
-              <img src={reservation.car.image} className="card-img-top" alt={`${reservation.car.name}`} />
-              <div className="card-body">
+            <div className="card h-100">
+              <img src={reservation.car.image} className="card-img-top reservation-image" alt={`${reservation.car.name}`} />
+              <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{reservation.car.name}</h5>
                 <p className="card-text">
                   <strong>Reservation Date:</strong>
@@ -67,7 +67,7 @@ const Reservations = () => {
                   {' '}
                   {reservation.car.location}
                 </p>
-                <p className="card-text">
+                <p className="card-text flex-grow-1">
                   <strong>About:</strong>
                   {' '}
                   {reservation.car.description}

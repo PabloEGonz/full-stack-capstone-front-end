@@ -14,3 +14,13 @@
     margin-bottom: 10px;
     color: #97bf0f;
 }
+
+@media (min-width: 769px) {
+    .reservation-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+  }
+
