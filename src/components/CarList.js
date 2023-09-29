@@ -42,33 +42,20 @@ function CarList() {
     );
   }
   return (
-    <div>
-      <h1>
-        Car List
-      </h1>
-      {cars.map((car) => (
-        <div key={car.id}>
-          <h2>{car.name}</h2>
-          <p>
-            Location:
-            {car.location}
-          </p>
-          <p>
-            Car Type:
-            {car.car_type}
-          </p>
-          <p>
-            Description:
-            {car.description}
-          </p>
-          <p>
-            Daily Rate: $
-            {car.daily_rate}
-          </p>
-          <img src={car.image} alt={car.name} style={{ maxWidth: '200px' }} />
-          <button type="button" onClick={() => handleDeleteCar(car.id)}>Delete Car</button>
-        </div>
-      ))}
+    <div className="delete-container">
+      <div className="delete-list">
+        {cars.map((car) => (
+          <div key={car.id} className="delete-list-item">
+            <h2>{car.name}</h2>
+            <img className="item-image" src={car.image} alt={car.name} style={{ maxWidth: '200px' }} />
+            <p>
+              Type of car:&ensp;
+              {car.car_type}
+            </p>
+            <button className="button btn-delete" type="button" onClick={() => handleDeleteCar(car.id)}>Delete</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
