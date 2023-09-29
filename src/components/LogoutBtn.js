@@ -13,6 +13,7 @@ const LogoutBtn = () => {
   return (
     <button
       type="button"
+      className="nav-link"
       onClick={handleLogout}
     >
       Log out
