@@ -1,9 +1,16 @@
 .card {
     margin: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #97bf0f;
     float: left;
     border-radius: 5px;
-    box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #97bf0f;;
     transition: 0.3s;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #97bf0f;
 }
