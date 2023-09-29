@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getReservations } from '../redux/reservations/reservationsSlice';
+import '../css/Reservations.css';
 
 const Reservations = () => {
   const { reservations, isLoading, error } = useSelector((store) => store.reservations);
