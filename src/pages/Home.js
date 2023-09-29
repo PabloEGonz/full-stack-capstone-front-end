@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import CarHome from '../components/CarHome';
 
 const Home = () => {
   const userPresent = useSelector((state) => state.user.id);
@@ -13,7 +14,7 @@ const Home = () => {
     );
   }
   return (
-    <h1>Home</h1>
+    <CarHome />
   );
 };
 export default Home;
