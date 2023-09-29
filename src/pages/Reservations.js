@@ -37,41 +37,45 @@ const Reservations = () => {
   }
 
   return (
-    <div className="reservation-page">
-      <h1 className="reserve-title">My Reservations</h1>
-      {reservations.map((reservation) => (
-        <div className="reservation-info" key={reservation.id}>
-          <div>
-            <p>
-              <strong>Reservation Date:&ensp;</strong>
-              {reservation.reservation_date}
-            </p>
+    <div className="container">
+      <h1 className="mt-5 mb-4">My Reservations</h1>
+      <div className="row">
+        {reservations.map((reservation) => (
+          <div className="col-md-6 col-lg-4 mb-4" key={reservation.id}>
+            <div className="card">
+              <img src={reservation.car.image} className="card-img-top" alt={`${reservation.car.name}`} />
+              <div className="card-body">
+                <h5 className="card-title">{reservation.car.name}</h5>
+                <p className="card-text">
+                  <strong>Reservation Date:</strong>
+                  {' '}
+                  {reservation.reservation_date}
+                </p>
+                <p className="card-text">
+                  <strong>Due Date:</strong>
+                  {' '}
+                  {reservation.due_date}
+                </p>
+                <p className="card-text">
+                  <strong>Service Fee: $</strong>
+                  {' '}
+                  {reservation.service_fee}
+                </p>
+                <p className="card-text">
+                  <strong>Location:</strong>
+                  {' '}
+                  {reservation.car.location}
+                </p>
+                <p className="card-text">
+                  <strong>About:</strong>
+                  {' '}
+                  {reservation.car.description}
+                </p>
+              </div>
+            </div>
           </div>
-          <div>
-            <p>
-              <strong>Due Date:&ensp;</strong>
-              {reservation.due_date}
-            </p>
-            <p>
-              <strong>Fee:&ensp;</strong>
-              {reservation.service_fee}
-            </p>
-            <p>
-              <strong>Car:&ensp;</strong>
-              {reservation.car.name}
-            </p>
-            <p>
-              <strong>Location:&ensp;</strong>
-              {reservation.car.location}
-            </p>
-            <p>
-              <strong>About:&ensp;</strong>
-              {reservation.car.description}
-            </p>
-            <img src={reservation.car.image} alt={`${reservation.car.name}`} />
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

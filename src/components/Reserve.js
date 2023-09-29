@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createReserve, getReservations } from '../redux/reservations/reservationsSlice';
 import { getCars } from '../redux/cars/carsSlice';
-import '../css/Reservation.css';
+import '../css/ReservationForm.css';
 
 const Reservation = () => {
   const cars = useSelector((state) => state.cars.cars);
