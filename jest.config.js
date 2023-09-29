@@ -1,4 +1,7 @@
 module.exports = {
   testEnvironment: 'jsdom',
-  // other Jest configurations...
+  // other Jest configurations..
+  moduleNameMapper: {
+    '^swiper/react$': 'swiper/react',
+  },
 };
