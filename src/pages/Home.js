@@ -6,7 +6,6 @@ import CarCard from '../components/CarCard';
 const Home = () => {
   const cars = useSelector((state) => state.cars.cars);
   const userPresent = useSelector((state) => state.user.id);
-  console.log(cars);
   if (!userPresent) {
     return (
       <div>
@@ -17,10 +16,13 @@ const Home = () => {
   }
   return (
     <>
-      <h1>Home</h1>
+      <h1>Available Cars</h1>
       { cars.map((car) => (
         <CarCard key={car.id} car={car} />
       ))}
+      <div className="text-center">
+        <Link className="btn btn-primary" to="/cars/new">Add a new car</Link>
+      </div>
     </>
   );
 };
