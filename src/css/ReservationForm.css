@@ -24,5 +24,8 @@ div.mb-3 select:focus {
 
 .btn {
   background-color: #97bf0f;
-  border-color: #97bf0f;
+}
+
+.btn:hover {
+  background-color: #597206;
 }

@@ -34,6 +34,16 @@ const Reservation = () => {
   };
 
   const submit = async () => {
+    if (!reserve.car_id || !reserve.reservation_date || !reserve.due_date || !reserve.service_fee) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    const reservationDate = new Date(reserve.reservation_date);
+    const dueDate = new Date(reserve.due_date);
+    if (reservationDate >= dueDate) {
+      alert('Reservation date must be before due date.');
+      return;
+    }
     await dispatch(createReserve(reserve));
     navigate('/reservations');
   };
