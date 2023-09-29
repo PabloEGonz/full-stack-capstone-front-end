@@ -2,9 +2,24 @@
     background: #97bf0f;
 }
 
+/* Navbar.css */
+.navbar-brand img {
+    /* Set the maximum width and height to control the logo size */
+    max-width: 100px; /* Adjust this value as needed */
+    max-height: 40px; /* Adjust this value as needed */
+  }
+  
+
 .nav-link {
     color: #fff;
     font-size: 24px;
     margin-top: 10px;
     font-weight: bold;
+}
+
+.container-fluid {
+    background: #97bf0f;
+    top: 0;
+    margin-top: -8px;
+    height: 60px;
 }
