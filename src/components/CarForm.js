@@ -1,6 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { createCar, setSubmitted } from '../redux/cars/carsSlice';
 
 const CarForm = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const submitted = useSelector((state) => state.cars.submitted);
+
+  useEffect(() => {
+    if (submitted) {
+      navigate('/');
+      dispatch(setSubmitted());
+    }
+  }, [submitted, navigate, dispatch]);
+
   const [carData, setCarData] = useState({
     name: '',
     description: '',
@@ -17,7 +31,6 @@ const CarForm = () => {
           <input
             type="text"
             className="form-control"
-            placeholder="Car name"
             id="carName"
             value={carData.name}
             onChange={(e) => setCarData({ ...carData, name: e.target.value })}
@@ -77,6 +90,13 @@ const CarForm = () => {
           />
         </div>
       </div>
+      <button
+        type="button"
+        className="btn btn-primary"
+        onClick={() => dispatch(createCar(carData))}
+      >
+        Create Car
+      </button>
     </form>
   );
 };
