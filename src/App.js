@@ -26,7 +26,7 @@ const Root = () => {
   return (
     <>
       <Navbar />
-      <div className="container pt-5">
+      <div className="container pt-5 mt-5 mt-lg-3">
         <Outlet />
       </div>
     </>
