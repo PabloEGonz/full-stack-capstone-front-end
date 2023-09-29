@@ -24,9 +24,9 @@ const CarForm = () => {
     car_type: '',
   });
   return (
-    <form action="post">
-      <div className="row g-3 p-5 text-start">
-        <div className="col-4">
+    <form action="post" className="pt-md-5">
+      <div className="row g-3 p-md-5 text-start">
+        <div className="col-md-4">
           <label htmlFor="carName" className="form-label">Car name</label>
           <input
             type="text"
@@ -36,7 +36,7 @@ const CarForm = () => {
             onChange={(e) => setCarData({ ...carData, name: e.target.value })}
           />
         </div>
-        <div className="col-8">
+        <div className="col-md-8">
           <label htmlFor="carName" className="form-label">Image</label>
           <input
             type="text"
@@ -47,7 +47,7 @@ const CarForm = () => {
             onChange={(e) => setCarData({ ...carData, image: e.target.value })}
           />
         </div>
-        <div className="col-3">
+        <div className="col-md-3">
           <label htmlFor="carName" className="form-label">Location</label>
           <input
             type="text"
@@ -57,7 +57,7 @@ const CarForm = () => {
             onChange={(e) => setCarData({ ...carData, location: e.target.value })}
           />
         </div>
-        <div className="col-2">
+        <div className="col-md-2">
           <label htmlFor="carName" className="form-label">Daily rate</label>
           <input
             type="number"
@@ -78,7 +78,7 @@ const CarForm = () => {
             onChange={(e) => setCarData({ ...carData, car_type: e.target.value })}
           />
         </div>
-        <div className="col-12">
+        <div className="col-md-12">
           <textarea
             type="text-area"
             className="form-control"
@@ -90,13 +90,15 @@ const CarForm = () => {
           />
         </div>
       </div>
-      <button
-        type="button"
-        className="btn btn-primary"
-        onClick={() => dispatch(createCar(carData))}
-      >
-        Create Car
-      </button>
+      <div className="pt-5 pt-lg-1">
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => dispatch(createCar(carData))}
+        >
+          Create Car
+        </button>
+      </div>
     </form>
   );
 };

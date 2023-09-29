@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { createReserve, getReservations } from '../redux/reservations/reservationsSlice';
 import { getCars } from '../redux/cars/carsSlice';
+import '../css/Reservation.css';
 
 const Reservation = () => {
   const cars = useSelector((state) => state.cars.cars);
-  // const user = useSelector((state) => state.user.id);
   const userId = useSelector((state) => state.user.id);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getCars());
@@ -19,7 +19,7 @@ const Reservation = () => {
 
   const [reserve, setReserve] = useState({
     user_id: userId,
-    reservation_date: '10-11-2023',
+    reservation_date: '',
     due_date: '',
     service_fee: '',
     car_id: '',
@@ -33,54 +33,62 @@ const Reservation = () => {
     }));
   };
 
-  const submit = () => {
-    console.log(reserve);
-    dispatch(createReserve(reserve));
+  const submit = async () => {
+    await dispatch(createReserve(reserve));
+    navigate('/reservations');
   };
 
   return (
-    <div>
+    <div className="container mt-5">
       <h2>Create Reservation</h2>
-      <form>
-        <div>
+      <form className="reservation-form">
+        <div className="mb-3">
+          <label htmlFor="reservationDate" className="form-label">Reservation Date</label>
           <input
             type="date"
             id="reservationDate"
             name="reservation_date"
             value={reserve.reservation_date}
             onChange={handleInputChange}
-            placeholder="Reservation Date"
+            className="form-control"
             required
           />
         </div>
-        <div>
+        <div className="mb-3">
+          <label htmlFor="dueDate" className="form-label">Due Date</label>
           <input
             type="date"
             id="dueDate"
             name="due_date"
             value={reserve.due_date}
             onChange={handleInputChange}
-            placeholder="Due Date"
+            className="form-control"
             required
           />
         </div>
-        <div>
-          <input
-            type="number"
-            id="serviceFee"
-            name="service_fee"
-            value={reserve.service_fee}
-            onChange={handleInputChange}
-            placeholder="Service Fee"
-            required
-          />
+        <div className="mb-3">
+          <label htmlFor="serviceFee" className="form-label">Service Fee</label>
+          <div className="input-group">
+            <span className="input-group-text">$</span>
+            <input
+              type="number"
+              id="serviceFee"
+              name="service_fee"
+              value={reserve.service_fee}
+              onChange={handleInputChange}
+              className="form-control"
+              required
+            />
+          </div>
         </div>
-        <div>
+        <div className="mb-3">
+          <label htmlFor="car" className="form-label">Select a Car</label>
           <select
             id="car"
             name="car_id"
             value={reserve.car_id}
             onChange={handleInputChange}
+            className="form-select"
             required
           >
             <option value="">Select a car</option>
@@ -91,7 +99,7 @@ const Reservation = () => {
             ))}
           </select>
         </div>
-        <button type="button" onClick={submit}>Create Reservation</button>
+        <button type="button" onClick={submit} className="btn btn-primary">Create Reservation</button>
       </form>
     </div>
   );

@@ -9,7 +9,7 @@ import Session from './pages/Session';
 import AddCar from './pages/AddCar';
 import Navbar from './components/Navbar';
 import { fetchUser } from './redux/users/usersSlice';
-import Reservations from './components/Reservations';
+import Reservations from './pages/Reservations';
 import Reserve from './components/Reserve';
 import CarList from './components/CarList';
 import CarDetail from './components/CarDetail';
@@ -28,7 +28,7 @@ const Root = () => {
   return (
     <>
       <Navbar />
-      <div className="container pt-5">
+      <div className="container pt-5 mt-5 mt-lg-3">
         <Outlet />
       </div>
     </>
