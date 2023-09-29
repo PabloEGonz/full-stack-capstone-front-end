@@ -16,7 +16,6 @@ const CarCard = ({ car }) => (
             , Daily Rate:
             {car.daily_rate}
           </h6>
-          <p className="card-text">{car.description}</p>
           <p className="card-text">
             Type:
             {car.car_type}
