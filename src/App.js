@@ -11,11 +11,13 @@ import Navbar from './components/Navbar';
 import { fetchUser } from './redux/users/usersSlice';
 import Reservations from './components/Reservations';
 import Reserve from './components/Reserve';
+import { getCars } from './redux/cars/carsSlice';
 
 const Root = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(getCars());
     const username = JSON.parse(localStorage.getItem('user_name'));
     if (username) {
       dispatch(fetchUser(username));
