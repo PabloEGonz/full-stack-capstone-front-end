@@ -11,6 +11,7 @@ const initialState = {
 
 // Create an async thunk for fetching cars
 export const getCars = createAsyncThunk('cars/fetchCars', async () => {
+  console.log('called!');
   try {
     const response = await fetch(`${BaseApi}cars`);
     if (!response.ok) {
@@ -22,6 +23,23 @@ export const getCars = createAsyncThunk('cars/fetchCars', async () => {
     throw error.message;
   }
 });
+
+export const deleteCarById = createAsyncThunk('cars/deleteCarById', async (carId) => {
+  try {
+    const response = await fetch(`${BaseApi}cars/${carId}`, {
+      method: 'DELETE',
+    });
+    if (!response.ok) {
+      throw new Error(`The request failed with status ${response.status}`);
+    }
+    // Return the deleted car ID as a result
+    return carId;
+  } catch (error) {
+    throw error.message;
+  }
+});
+
+// Create an async thunk for creating a new car
 
 export const createCar = createAsyncThunk('cars/createCar', async (carData, thunkAPI) => {
   try {
@@ -63,6 +81,19 @@ const carsSlice = createSlice({
         state.cars = action.payload;
       })
       .addCase(getCars.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      })
+      .addCase(deleteCarById.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(deleteCarById.fulfilled, (state, action) => {
+        state.isLoading = false;
+        // Remove the deleted car from the state
+        state.cars = state.cars.filter((car) => car.id !== action.payload);
+      })
+      .addCase(deleteCarById.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
       })

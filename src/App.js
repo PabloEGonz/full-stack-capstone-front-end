@@ -11,6 +11,8 @@ import Navbar from './components/Navbar';
 import { fetchUser } from './redux/users/usersSlice';
 import Reservations from './pages/Reservations';
 import Reserve from './components/Reserve';
+import CarList from './components/CarList';
+import CarDetail from './components/CarDetail';
 import { getCars } from './redux/cars/carsSlice';
 
 const Root = () => {
@@ -40,6 +42,8 @@ const router = createBrowserRouter(
       <Route path="/cars/new" element={<AddCar />} />
       <Route path="/reservations/new" element={<Reserve />} />
       <Route path="/reservations" element={<Reservations />} />
+      <Route path="/cars/delete" element={<CarList />} />
+      <Route path="/cars/:carId" element={<CarDetail />} />
     </Route>,
   ),
 );
