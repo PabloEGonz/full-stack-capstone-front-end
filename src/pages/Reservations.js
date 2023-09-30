@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getReservations } from '../redux/reservations/reservationsSlice';
+import '../css/Reservations.css';
 
 const Reservations = () => {
   const { reservations, isLoading, error } = useSelector((store) => store.reservations);
@@ -30,48 +32,59 @@ const Reservations = () => {
 
   if (!user) {
     return (
-      <div className="error-container">
-        <h2>Please log in to see your reservations</h2>
+      <div className="container mt-5">
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <div className="alert alert-danger" role="alert">
+              You need to log-in or sign-in to continue
+            </div>
+            <Link className="btn btn-primary" to="/session">Login</Link>
+          </div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="reservation-page">
-      <h1 className="reserve-title">My Reservations</h1>
-      {reservations.map((reservation) => (
-        <div className="reservation-info" key={reservation.id}>
-          <div>
-            <p>
-              <strong>Reservation Date:&ensp;</strong>
-              {reservation.reservation_date}
-            </p>
+    <div className="container">
+      <h1 className="mt-5 mb-4">My Reservations</h1>
+      <div className="row">
+        {reservations.map((reservation) => (
+          <div className="col-md-6 col-lg-4 mb-4" key={reservation.id}>
+            <div className="card h-100">
+              <img src={reservation.car.image} className="card-img-top reservation-image" alt={`${reservation.car.name}`} />
+              <div className="card-body d-flex flex-column">
+                <h5 className="card-title">{reservation.car.name}</h5>
+                <p className="card-text">
+                  <strong>Reservation Date:</strong>
+                  {' '}
+                  {reservation.reservation_date}
+                </p>
+                <p className="card-text">
+                  <strong>Due Date:</strong>
+                  {' '}
+                  {reservation.due_date}
+                </p>
+                <p className="card-text">
+                  <strong>Service Fee: $</strong>
+                  {' '}
+                  {reservation.service_fee}
+                </p>
+                <p className="card-text">
+                  <strong>Location:</strong>
+                  {' '}
+                  {reservation.car.location}
+                </p>
+                <p className="card-text flex-grow-1">
+                  <strong>About:</strong>
+                  {' '}
+                  {reservation.car.description}
+                </p>
+              </div>
+            </div>
           </div>
-          <div>
-            <p>
-              <strong>Due Date:&ensp;</strong>
-              {reservation.due_date}
-            </p>
-            <p>
-              <strong>Fee:&ensp;</strong>
-              {reservation.service_fee}
-            </p>
-            <p>
-              <strong>Car:&ensp;</strong>
-              {reservation.car.name}
-            </p>
-            <p>
-              <strong>Location:&ensp;</strong>
-              {reservation.car.location}
-            </p>
-            <p>
-              <strong>About:&ensp;</strong>
-              {reservation.car.description}
-            </p>
-            <img src={reservation.car.image} alt={`${reservation.car.name}`} />
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

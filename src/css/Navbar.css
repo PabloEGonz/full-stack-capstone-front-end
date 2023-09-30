@@ -1,0 +1,22 @@
+.offcanvas-body {
+  background: #97bf0f;
+}
+
+.navbar-brand img {
+  max-width: 100px;
+  max-height: 40px;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 24px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.container-fluid {
+  background: #97bf0f;
+  top: 0;
+  margin-top: -8px;
+  height: 62px;
+}

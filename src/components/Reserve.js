@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { createReserve, getReservations } from '../redux/reservations/reservationsSlice';
 import { getCars } from '../redux/cars/carsSlice';
-import '../css/Reservation.css';
+import '../css/ReservationForm.css';
 
 const Reservation = () => {
   const cars = useSelector((state) => state.cars.cars);
   const userId = useSelector((state) => state.user.id);
+  const { isLoading, error } = useSelector((store) => store.reservations);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -34,9 +35,51 @@ const Reservation = () => {
   };
 
   const submit = async () => {
+    if (!reserve.car_id || !reserve.reservation_date || !reserve.due_date || !reserve.service_fee) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    const reservationDate = new Date(reserve.reservation_date);
+    const dueDate = new Date(reserve.due_date);
+    if (reservationDate >= dueDate) {
+      alert('Reservation date must be before due date.');
+      return;
+    }
     await dispatch(createReserve(reserve));
     navigate('/reservations');
   };
+
+  if (isLoading) {
+    return (
+      <div className="loading">
+        <div className="spinner" />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="error-container">
+        <h2>Oops, something went wrong. Please try again!</h2>
+        <p>{error}</p>
+      </div>
+    );
+  }
+
+  if (!userId) {
+    return (
+      <div className="container mt-5">
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <div className="alert alert-danger" role="alert">
+              You need to log-in or sign-in to continue
+            </div>
+            <Link className="btn btn-primary" to="/session">Login</Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mt-5">
