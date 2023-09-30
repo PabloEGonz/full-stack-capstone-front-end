@@ -11,7 +11,6 @@ const initialState = {
 
 // Create an async thunk for fetching cars
 export const getCars = createAsyncThunk('cars/fetchCars', async () => {
-  console.log('called!');
   try {
     const response = await fetch(`${BaseApi}cars`);
     if (!response.ok) {
