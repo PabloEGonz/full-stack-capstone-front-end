@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { createReserve, getReservations } from '../redux/reservations/reservationsSlice';
 import { getCars } from '../redux/cars/carsSlice';
 import '../css/ReservationForm.css';
@@ -8,6 +8,7 @@ import '../css/ReservationForm.css';
 const Reservation = () => {
   const cars = useSelector((state) => state.cars.cars);
   const userId = useSelector((state) => state.user.id);
+  const { isLoading, error } = useSelector((store) => store.reservations);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -47,6 +48,25 @@ const Reservation = () => {
     await dispatch(createReserve(reserve));
     navigate('/reservations');
   };
+
+  if (isLoading) {
+    return (
+      <div className="loading">
+        <div className="spinner" />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="error-container">
+        <h2>Oops, something went wrong. Please try again!</h2>
+        <p>{error}</p>
+      </div>
+    );
+  }
+
+  
 
   return (
     <div className="container mt-5">

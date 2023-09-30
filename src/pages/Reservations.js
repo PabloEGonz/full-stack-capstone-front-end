@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getReservations } from '../redux/reservations/reservationsSlice';
 import '../css/Reservations.css';
 
@@ -29,13 +30,7 @@ const Reservations = () => {
     );
   }
 
-  if (!user) {
-    return (
-      <div className="error-container">
-        <h2>Please log in to see your reservations</h2>
-      </div>
-    );
-  }
+ 
 
   return (
     <div className="container">
