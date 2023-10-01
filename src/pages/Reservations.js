@@ -10,7 +10,9 @@ const Reservations = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getReservations(user));
+    if (user) {
+      dispatch(getReservations(user));
+    }
   }, [dispatch, user]);
 
   if (isLoading) {
