@@ -24,8 +24,9 @@ nav .nav-link {
 .bi {
   padding: 25% 3% 3% 3%;
   font-size: 1.5rem;
-} 
+}
 
-.bi, .logout {
+.bi,
+.logout {
   color: rgb(218, 4, 4) !important;
-} 
+}
