@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 const CarCard = ({ car }) => (
   <div className="card mb-3">
     <div className="row g-0">
-      <Link to={`/cars/${car.id}`}>
-        <div className="col-md-4">
+      <div className="col-md-4">
+        <Link to={`/cars/${car.id}`}>
           <img src={car.image} className="img-fluid rounded-start" alt={car.name} />
-        </div>
-      </Link>
+        </Link>
+      </div>
       <div className="col-md-8">
         <div className="card-body">
           <h5 className="card-title">{car.name}</h5>
