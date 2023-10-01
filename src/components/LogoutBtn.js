@@ -11,13 +11,16 @@ const LogoutBtn = () => {
     navigate('/');
   };
   return (
-    <button
-      type="button"
-      className="nav-link"
-      onClick={handleLogout}
-    >
-      Log out
-    </button>
+    <>
+      <button
+        type="button"
+        className="nav-link logout"
+        onClick={handleLogout}
+      >
+        <i className="bi bi-box-arrow-left" />
+        Log out
+      </button>
+    </>
   );
 };
 
