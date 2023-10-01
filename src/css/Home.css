@@ -2,6 +2,10 @@
   padding: 0;
 }
 
+.cars-container .img-fluid {
+  object-fit: cover;
+}
+
 @media (min-width: 769px) {
   .cars-container {
     display: grid;
@@ -13,6 +17,7 @@
   }
 
   .cars-container .img-fluid {
+    object-fit: cover;
     height: 149px;
   }
 }
