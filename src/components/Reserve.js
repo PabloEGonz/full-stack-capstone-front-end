@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
-import { createReserve, getReservations } from '../redux/reservations/reservationsSlice';
+import { createReserve } from '../redux/reservations/reservationsSlice';
 import { getCars } from '../redux/cars/carsSlice';
 import '../css/ReservationForm.css';
 
@@ -15,7 +15,6 @@ const Reservation = () => {
 
   useEffect(() => {
     dispatch(getCars());
-    dispatch(getReservations(userId));
   }, [dispatch, userId]);
 
   const [reserve, setReserve] = useState({
