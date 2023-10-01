@@ -43,6 +43,11 @@
   margin-top: 2rem;
 }
 
+.textarea:focus {
+  border-color: var(--light-green);
+  box-shadow: 0 0 10px var(--light-green);
+}
+
 @media (max-width: 768px) {
   .delete-list {
     width: 70%;

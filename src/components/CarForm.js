@@ -81,7 +81,7 @@ const CarForm = () => {
         <div className="col-md-12">
           <textarea
             type="text-area"
-            className="form-control"
+            className="form-control textarea"
             placeholder="Description"
             rows="5"
             id="description"
@@ -90,10 +90,10 @@ const CarForm = () => {
           />
         </div>
       </div>
-      <div className="pt-5 pt-lg-1">
+      <div className="py-5 pt-lg-1">
         <button
           type="button"
-          className="btn btn-primary"
+          className="btn btn-block"
           onClick={() => dispatch(createCar(carData))}
         >
           Create Car

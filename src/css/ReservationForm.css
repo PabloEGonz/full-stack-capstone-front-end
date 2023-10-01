@@ -24,7 +24,7 @@ div.mb-3 select:focus {
 
 .btn {
   background-color: var(--light-green);
-  color: #fff
+  color: #fff;
 }
 
 .btn:hover {
