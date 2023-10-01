@@ -11,4 +11,3 @@ input[type="text"]:focus {
   border-color: var(--light-green);
   box-shadow: 0 0 8px var(--light-green);
 }
-

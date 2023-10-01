@@ -12,12 +12,15 @@ const CarCard = ({ car }) => (
           <h5 className="card-title">{car.name}</h5>
           <h6>
             Location:
+            {' '}
             {car.location}
             , Daily Rate:
+            {' '}
             {car.daily_rate}
           </h6>
           <p className="card-text">
             Type:
+            {' '}
             {car.car_type}
           </p>
         </div>
