@@ -4,26 +4,27 @@
 }
 
 input[type="date"]:focus {
-  border-color: #97bf0f;
-  box-shadow: 0 0 10px #97bf0f;
+  border-color: var(--light-green);
+  box-shadow: 0 0 10px var(--light-green);
 }
 
 input[type="number"]:focus {
-  border-color: #97bf0f;
-  box-shadow: 0 0 10px #97bf0f;
+  border-color: var(--light-green);
+  box-shadow: 0 0 10px var(--light-green);
 }
 
 div.mb-3 select:focus {
-  border-color: #97bf0f;
-  box-shadow: 0 0 10px #97bf0f;
+  border-color: var(--light-green);
+  box-shadow: 0 0 10px var(--light-green);
 }
 
 .form-label {
-  color: #97bf0f;
+  color: var(--light-green);
 }
 
 .btn {
-  background-color: #97bf0f;
+  background-color: var(--light-green);
+  color: #fff
 }
 
 .btn:hover {
