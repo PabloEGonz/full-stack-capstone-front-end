@@ -49,7 +49,7 @@ const Signin = () => {
       </div>
       <button
         type="button"
-        className="btn btn-primary btn-block mb-3"
+        className="btn btn-block mb-3"
         onClick={handleSubmit}
       >
         Sign in
