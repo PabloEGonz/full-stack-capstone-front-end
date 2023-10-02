@@ -126,7 +126,24 @@ const Reservation = () => {
             />
           </div>
         </div>
-        
+        <div className="mb-3">
+          <label htmlFor="car" className="form-label">Select a Car</label>
+          <select
+            id="car"
+            name="car_id"
+            value={reserve.car_id}
+            onChange={handleInputChange}
+            className="form-select"
+            required
+          >
+            <option value="">Select a car</option>
+            {cars.map((car) => (
+              <option key={car.id} value={car.id}>
+                {car.name}
+              </option>
+            ))}
+          </select>
+        </div>
         <button type="button" onClick={submit} className="btn btn-primary">Create Reservation</button>
       </form>
     </div>
