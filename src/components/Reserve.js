@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { createReserve } from '../redux/reservations/reservationsSlice';
 import { getCars } from '../redux/cars/carsSlice';
 import '../css/ReservationForm.css';
@@ -12,17 +12,23 @@ const Reservation = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     dispatch(getCars());
   }, [dispatch, userId]);
+
+  const queryParams = new URLSearchParams(location.search);
+  const carIdFromQuery = queryParams.get('carId');
+  const carNameFromQuery = queryParams.get('carName');
 
   const [reserve, setReserve] = useState({
     user_id: userId,
     reservation_date: '',
     due_date: '',
     service_fee: '',
-    car_id: '',
+    car_id: carIdFromQuery || '',
+    car_name: carNameFromQuery || '',
   });
 
   const handleInputChange = (e) => {
@@ -34,10 +40,7 @@ const Reservation = () => {
   };
 
   const submit = async () => {
-    if (!reserve.car_id || !reserve.reservation_date || !reserve.due_date || !reserve.service_fee) {
-      alert('Please fill in all required fields.');
-      return;
-    }
+    if (!reserve.car_id || !reserve.reservation_date || !reserve.due_date || !reserve.service_fee) { alert('Please fill in all required fields.'); return; }
     const reservationDate = new Date(reserve.reservation_date);
     const dueDate = new Date(reserve.due_date);
     if (reservationDate >= dueDate) {
@@ -123,24 +126,7 @@ const Reservation = () => {
             />
           </div>
         </div>
-        <div className="mb-3">
-          <label htmlFor="car" className="form-label">Select a Car</label>
-          <select
-            id="car"
-            name="car_id"
-            value={reserve.car_id}
-            onChange={handleInputChange}
-            className="form-select"
-            required
-          >
-            <option value="">Select a car</option>
-            {cars.map((car) => (
-              <option key={car.id} value={car.id}>
-                {car.name}
-              </option>
-            ))}
-          </select>
-        </div>
+        
         <button type="button" onClick={submit} className="btn btn-primary">Create Reservation</button>
       </form>
     </div>
