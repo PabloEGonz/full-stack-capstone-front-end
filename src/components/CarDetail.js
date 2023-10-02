@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import '../assets/CarDetails.css';
 
@@ -46,7 +46,9 @@ function CarDetail() {
       </div>
       <p className="car-description">{car.description}</p>
       <div className="button-container">
-        <button type="button" className="reserve-button">Reserve</button>
+        <Link to="/reservations/new" className="nav-link">
+          <button type="button" className="reserve-button">Reserve</button>
+        </Link>
       </div>
     </div>
   );
