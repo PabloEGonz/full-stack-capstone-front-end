@@ -1,5 +1,5 @@
 .offcanvas-body {
-  background: #97bf0f;
+  background: var(--light-green);
 }
 
 .navbar-brand img {
@@ -7,7 +7,7 @@
   max-height: 40px;
 }
 
-.nav-link {
+nav .nav-link {
   color: #fff;
   font-size: 24px;
   margin-top: 10px;
@@ -15,8 +15,18 @@
 }
 
 .container-fluid {
-  background: #97bf0f;
+  background: var(--light-green);
   top: 0;
   margin-top: -8px;
   height: 62px;
+}
+
+.bi {
+  padding: 25% 3% 3% 3%;
+  font-size: 1.5rem;
+}
+
+.bi,
+.logout {
+  color: rgb(218, 4, 4) !important;
 }

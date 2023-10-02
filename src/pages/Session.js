@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import '../css/Sessions.css';
 import { useSelector } from 'react-redux';
 import Login from '../components/Login';
 import Signin from '../components/Signin';
 
 const Session = () => {
+  const { hash } = useLocation();
   const userPresent = useSelector((state) => state.user.id);
-  const [logIn, SetLogIn] = useState('show active');
-  const [signIn, SetSignIn] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -15,48 +15,35 @@ const Session = () => {
       navigate('/');
     }
   }, [navigate, userPresent]);
-  const toggleVissibility = (on, off) => {
-    off(' ');
-    on('show active');
-  };
   return (
-    <div className="container session-form pt-5">
-      <ul className="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+    <div className="container session-form pt-5 px-5">
+      <ul className="nav nav-pills nav-justified mb-3 px-5" id="ex1" role="tablist">
         <li className="nav-item" role="presentation">
           <a
-            className={`nav-link ${logIn}`}
+            className={hash === '#login' ? 'nav-link active' : 'nav-link '}
             id="tab-login"
             data-mdb-toggle="pill"
-            href="#pills-login"
+            href="#login"
             role="tab"
-            aria-controls="pills-login"
-            aria-selected="false"
-            onClick={() => toggleVissibility(SetLogIn, SetSignIn)}
           >
             Login
           </a>
         </li>
         <li className="nav-item" role="presentation">
           <a
-            className={`nav-link ${signIn}`}
+            className={hash === '#register' ? 'nav-link active' : 'nav-link '}
             id="tab-register"
             data-mdb-toggle="pill"
-            href="#pills-register"
+            href="#register"
             role="tab"
-            aria-controls="pills-register"
-            aria-selected="true"
-            onClick={() => toggleVissibility(SetSignIn, SetLogIn)}
           >
             Register
           </a>
         </li>
       </ul>
-      <div className="tab-content">
-        <div className={`tab-pane fade ${logIn}`} id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-          <Login />
-        </div>
-        <div className={`tab-pane fade ${signIn}`} id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-          <Signin />
+      <div className="tab-content px-5">
+        <div className="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-session">
+          {hash === '#register' ? <Signin /> : <Login /> }
         </div>
       </div>
     </div>

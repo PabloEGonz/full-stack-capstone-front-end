@@ -1,7 +1,7 @@
-// CarList.js
 import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteCarById, getCars } from '../redux/cars/carsSlice'; // Import your Redux action for deleting a car
+import { Link } from 'react-router-dom';
+import { deleteCarById, getCars } from '../redux/cars/carsSlice';
 
 function CarList() {
   const dispatch = useDispatch();
@@ -36,8 +36,15 @@ function CarList() {
   }
   if (!user) {
     return (
-      <div className="error-container">
-        <h2>Please login to see cars</h2>
+      <div className="container mt-5">
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <div className="alert alert-danger" role="alert">
+              You need to log-in or sign-in to continue
+            </div>
+            <Link className="btn" to="/session#login">Login</Link>
+          </div>
+        </div>
       </div>
     );
   }

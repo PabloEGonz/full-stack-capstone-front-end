@@ -1,0 +1,13 @@
+.nav-pills .nav-link {
+  color: var(--light-green) !important;
+}
+
+.nav-pills .active {
+  background-color: var(--light-green) !important;
+  color: #fff !important;
+}
+
+input[type="text"]:focus {
+  border-color: var(--light-green);
+  box-shadow: 0 0 8px var(--light-green);
+}

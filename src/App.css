@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+
 .App {
   text-align: center;
 }
@@ -41,6 +43,11 @@
   justify-items: center;
   align-items: center;
   margin-top: 2rem;
+}
+
+.textarea:focus {
+  border-color: var(--light-green);
+  box-shadow: 0 0 10px var(--light-green);
 }
 
 @media (max-width: 768px) {

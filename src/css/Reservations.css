@@ -1,10 +1,10 @@
 .card {
   margin: 10px;
   padding: 10px;
-  border: 1px solid #97bf0f;
+  border: 1px solid var(--light-green);
   float: left;
   border-radius: 5px;
-  box-shadow: 0 0 5px #97bf0f;
+  box-shadow: 0 0 5px var(--light-green);
   transition: 0.3s;
 }
 
@@ -12,7 +12,7 @@
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #97bf0f;
+  color: var(--light-green);
 }
 
 @media (min-width: 769px) {

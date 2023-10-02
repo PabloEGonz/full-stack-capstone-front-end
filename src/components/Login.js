@@ -26,16 +26,15 @@ const Login = () => {
       <div className="row mb-4" />
       <button
         type="button"
-        className="btn btn-primary btn-block mb-4"
+        className="btn btn-block mb-4"
         onClick={() => dispatch(fetchUser(userName))}
       >
         Log in
       </button>
       <div className="text-center">
-        <a href="#!">Forgot password?</a>
         <p>
           Not a member?
-          <a href="#!">Register</a>
+          <a href="#register">Register</a>
         </p>
       </div>
     </form>

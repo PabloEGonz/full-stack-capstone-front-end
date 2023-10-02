@@ -10,7 +10,9 @@ const Reservations = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getReservations(user));
+    if (user) {
+      dispatch(getReservations(user));
+    }
   }, [dispatch, user]);
 
   if (isLoading) {
@@ -38,7 +40,7 @@ const Reservations = () => {
             <div className="alert alert-danger" role="alert">
               You need to log-in or sign-in to continue
             </div>
-            <Link className="btn btn-primary" to="/session">Login</Link>
+            <Link className="btn" to="/session#login">Login</Link>
           </div>
         </div>
       </div>

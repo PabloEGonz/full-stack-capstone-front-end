@@ -1,0 +1,29 @@
+.cars-container .card {
+  padding: 0;
+}
+
+.cars-container .img-fluid {
+  object-fit: cover;
+}
+
+@media (min-width: 769px) {
+  .cars-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cars-container .card {
+    height: 150px;
+  }
+
+  .cars-container .img-fluid {
+    object-fit: cover;
+    height: 149px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .cars-container .img-fluid {
+    border-radius: 5px 5px 0 0 !important;
+  }
+}
