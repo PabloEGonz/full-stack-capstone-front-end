@@ -77,11 +77,6 @@ const Reservations = () => {
                   {' '}
                   {reservation.car.location}
                 </p>
-                <p className="card-text flex-grow-1">
-                  <strong>About:</strong>
-                  {' '}
-                  {reservation.car.description}
-                </p>
               </div>
             </div>
           </div>
