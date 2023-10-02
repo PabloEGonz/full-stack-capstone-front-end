@@ -46,7 +46,7 @@ function CarDetail() {
       </div>
       <p className="car-description">{car.description}</p>
       <div className="button-container">
-        <Link to="/reservations/new" className="nav-link">
+        <Link to={`/reservations/new?carId=${car.id}&carName=${encodeURIComponent(car.name)}`} className="nav-link">
           <button type="button" className="reserve-button">Reserve</button>
         </Link>
       </div>

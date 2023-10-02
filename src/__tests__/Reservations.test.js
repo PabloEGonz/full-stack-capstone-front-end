@@ -45,5 +45,32 @@ it('Reservations component should render correctly', () => {
     </React.StrictMode>,
   );
 
-  expect(result).toMatchSnapshot();
+  expect(result.container).toMatchInlineSnapshot(`
+<div>
+  <div
+    class="container mt-5"
+  >
+    <div
+      class="row justify-content-center"
+    >
+      <div
+        class="col-md-6"
+      >
+        <div
+          class="alert alert-danger"
+          role="alert"
+        >
+          You need to log-in or sign-in to continue
+        </div>
+        <a
+          class="btn"
+          href="/session#login"
+        >
+          Login
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`);
 });

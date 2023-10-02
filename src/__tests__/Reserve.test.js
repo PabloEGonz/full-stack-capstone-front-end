@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { render } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Reserve from '../components/Reserve';
+import Reserve from '../components/Reserve'; // Updated import
 import store from '../redux/store';
 
 const cars = [
@@ -20,7 +20,7 @@ const cars = [
 
 const user = 1;
 
-it('Reserve component should render correctly', () => {
+it('Reservation component should render correctly', () => { // Updated test description
   const result = render(
     <React.StrictMode>
       <Router>
