@@ -15,9 +15,7 @@ function CarList() {
   const handleDeleteCar = (carId) => {
     // Dispatch the deleteCar action with the carId
     dispatch(deleteCarById(carId))
-      .catch((error) => {
-        console.error('Error deleting car:', error);
-      });
+      .catch((error) => error);
   };
   if (isLoading) {
     return (
