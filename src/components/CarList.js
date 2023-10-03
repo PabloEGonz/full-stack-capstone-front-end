@@ -2,8 +2,9 @@ import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteCarById, getCars } from '../redux/cars/carsSlice';
+import '../css/CarDelete.css';
 
-function CarList() {
+const CarList = () => {
   const dispatch = useDispatch();
   const { cars, isLoading, error } = useSelector((store) => store.cars);
   const user = useSelector((state) => state.user.id);
@@ -63,6 +64,6 @@ function CarList() {
       </div>
     </div>
   );
-}
+};
 
 export default CarList;
