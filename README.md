@@ -198,6 +198,6 @@ Special thanks to Murat Korkmaz, on providing an awesome design! https://www.beh
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE.md) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right"><a href="#readme-top">👆</a></p>
