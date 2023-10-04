@@ -88,9 +88,9 @@ https://github.com/users/ezraermy/projects/3
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+### 🚀 Live Demo <a name="live-demo"></a>
 
-Currently, we don't have a live version of the project. We will let you know ASAP when it is available!
+You can find the live demo [here!](https://rent-a-car-front-end.onrender.com/)
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
