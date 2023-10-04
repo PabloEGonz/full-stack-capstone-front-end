@@ -57,7 +57,7 @@ export const usersSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchUser.fulfilled, (state, { payload }) => {
-        if (payload.name) {
+        if (payload.user_name) {
           state.id = payload.id;
           state.user_name = payload.user_name;
           state.name = payload.name;
@@ -68,7 +68,7 @@ export const usersSlice = createSlice({
         state.loginError = true;
       })
       .addCase(createUser.fulfilled, (state, { payload }) => {
-        if (payload.name) {
+        if (payload.user_name) {
           state.id = payload.id;
           state.user_name = payload.user_name;
           state.name = payload.name;
