@@ -2,8 +2,9 @@ import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteCarById, getCars } from '../redux/cars/carsSlice';
+import '../css/CarDelete.css';
 
-function CarList() {
+const CarList = () => {
   const dispatch = useDispatch();
   const { cars, isLoading, error } = useSelector((store) => store.cars);
   const user = useSelector((state) => state.user.id);
@@ -15,9 +16,7 @@ function CarList() {
   const handleDeleteCar = (carId) => {
     // Dispatch the deleteCar action with the carId
     dispatch(deleteCarById(carId))
-      .catch((error) => {
-        console.error('Error deleting car:', error);
-      });
+      .catch((error) => error);
   };
   if (isLoading) {
     return (
@@ -65,6 +64,6 @@ function CarList() {
       </div>
     </div>
   );
-}
+};
 
 export default CarList;

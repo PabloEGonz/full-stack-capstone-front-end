@@ -1,3 +1,3 @@
-const BaseApi = 'http://[::1]:3000/api/';
+const BaseApi = 'https://rent-a-car-cfdo.onrender.com/api/';
 
 export default BaseApi;

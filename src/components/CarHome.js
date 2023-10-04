@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getCars } from '../redux/cars/carsSlice';
 
-function CarHome() {
+const CarHome = () => {
   const dispatch = useDispatch();
   const { cars } = useSelector((store) => store.cars);
   const Navigate = useNavigate();
@@ -38,6 +38,6 @@ function CarHome() {
       ))}
     </div>
   );
-}
+};
 
 export default CarHome;

@@ -57,18 +57,23 @@ export const usersSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchUser.fulfilled, (state, { payload }) => {
-        state.id = payload.id;
-        state.user_name = payload.user_name;
-        state.name = payload.name;
-        localStorage.setItem('user_name', JSON.stringify(payload.user_name));
+        if (payload.name) {
+          state.id = payload.id;
+          state.user_name = payload.user_name;
+          state.name = payload.name;
+          localStorage.setItem('user_name', JSON.stringify(payload.user_name));
+        }
       })
       .addCase(fetchUser.rejected, (state) => {
         state.loginError = true;
       })
       .addCase(createUser.fulfilled, (state, { payload }) => {
-        state.id = payload.id;
-        state.user_name = payload.user_name;
-        state.name = payload.name;
+        if (payload.name) {
+          state.id = payload.id;
+          state.user_name = payload.user_name;
+          state.name = payload.name;
+          localStorage.setItem('user_name', JSON.stringify(payload.user_name));
+        }
       })
       .addCase(createUser.rejected, (state) => {
         state.loginError = true;
