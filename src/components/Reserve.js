@@ -144,7 +144,7 @@ const Reservation = () => {
             ))}
           </select>
         </div>
-        <button type="button" onClick={submit} className="btn btn-primary">Create Reservation</button>
+        <button type="button" onClick={submit} className="btn btn-primary">Book Your Ride</button>
       </form>
     </div>
   );
