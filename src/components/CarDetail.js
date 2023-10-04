@@ -1,8 +1,8 @@
 import { useParams, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import '../assets/CarDetails.css';
+import '../css/CarDetails.css';
 
-function CarDetail() {
+const CarDetail = () => {
   const { carId } = useParams();
   const cars = useSelector((state) => state.cars.cars);
 
@@ -52,6 +52,6 @@ function CarDetail() {
       </div>
     </div>
   );
-}
+};
 
 export default CarDetail;
