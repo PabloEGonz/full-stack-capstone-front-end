@@ -59,24 +59,24 @@ https://github.com/users/ezraermy/projects/3
 <details>
   <summary>Client</summary>
   <ul>
-   <li>[HTML](https://www.w3schools.com/html/)</li>
-   <>[CSS](https://www.w3schools.com/css/</)li>
-   <li>[React](https://react.dev/)</li>
-   <li>[Redux](https://redux.js.org/)</li>
+    <li><a href="https://www.w3schools.com/html/">HTML</a></li>
+    <li><a href="https://www.w3schools.com/css/">CSS</a></li>
+    <li><a href="https://react.dev/">React</a></li>
+    <li><a href="https://redux.js.org/">Redux</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li>[Ruby on Rails](https://rubyonrails.org/)</li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
 <details>
-<summary>Database</summary>
+  <summary>Database</summary>
   <ul>
-    <li>[PostgreSQL](https://www.postgresql.org/)</li>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 </details>
 
