@@ -36,14 +36,21 @@
 
 This is the frontend side of the project. You can go to the backend side following this link:
 
-https://github.com/ezraermy/Full-Stack-Capstone-Backend
+[Full Stack Capstone - Backend](https://github.com/ezraermy/Full-Stack-Capstone-Backend)
 
-In this project, we had a team of 3 members.
+#### *In this project, we are a group of three*.
+#### Member 1: [Ezra Yehuwalashet](https://github.com/ezraermy)
+#### Member 2: [Ezequiel Gonzalez](https://github.com/PabloEGonz)
+#### Member 2: [Yoseph Addisu](https://github.com/yosaddis)
+
 
 ## Kanban Board <a name="kanban-board"></a>
 
-This is the link to the kanban board:
+Link to the kanban board:
 https://github.com/users/ezraermy/projects/3
+
+![kanban_page1](./src/assets/images/kanban1.png)
+![kanban_page2](./src/assets/images/kanban2.png)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -52,24 +59,24 @@ https://github.com/users/ezraermy/projects/3
 <details>
   <summary>Client</summary>
   <ul>
-   <li>HTML</li>
-   <li>CSS</li>
-   <li>React</li>
-   <li>Redux</li>
+    <li><a href="https://www.w3schools.com/html/">HTML</a></li>
+    <li><a href="https://www.w3schools.com/css/">CSS</a></li>
+    <li><a href="https://react.dev/">React</a></li>
+    <li><a href="https://redux.js.org/">Redux</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li>Ruby on Rails</li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
 <details>
-<summary>Database</summary>
+  <summary>Database</summary>
   <ul>
-    <li>PostgreSQL</li>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 </details>
 
@@ -88,9 +95,9 @@ https://github.com/users/ezraermy/projects/3
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+### 🚀 Live Demo <a name="live-demo"></a>
 
-Currently, we don't have a live version of the project. We will let you know ASAP when it is available!
+You can find the live demo [here!](https://rent-a-car-front-end.onrender.com/)
 
 <p align="right"><a href="#readme-top">👆</a></p>
 

@@ -49,7 +49,7 @@ const CarDetail = () => {
       <div className="button-container">
         <Link to={`/reservations/new?carId=${car.id}&carName=${encodeURIComponent(car.name)}`} className="nav-link">
           <button type="button" className="reserve-button">
-            Reserve
+            Rent
             <i className="bi bi-arrow-right" />
           </button>
         </Link>

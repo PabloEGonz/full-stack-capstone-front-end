@@ -49,7 +49,7 @@ const Reservations = () => {
 
   return (
     <div className="container">
-      <h1 className="mt-5 mb-4">My Reservations</h1>
+      <h1 className="mt-5 mb-4">My Rentals</h1>
       <div className="row">
         {reservations.map((reservation) => (
           <div className="col-md-6 col-lg-4 mb-4" key={reservation.id}>
@@ -76,11 +76,6 @@ const Reservations = () => {
                   <strong>Location:</strong>
                   {' '}
                   {reservation.car.location}
-                </p>
-                <p className="card-text flex-grow-1">
-                  <strong>About:</strong>
-                  {' '}
-                  {reservation.car.description}
                 </p>
               </div>
             </div>

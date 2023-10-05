@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LogoutBtn from './LogoutBtn';
 import '../css/Navbar.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/images/logo.png';
 
 const Navbar = () => {
   const userPresent = useSelector((state) => state.user.id);
@@ -32,10 +32,10 @@ const Navbar = () => {
                 <Link className="nav-link" to="/session#login">Login</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/reservations/new">Reserve</Link>
+                <Link className="nav-link" to="/reservations/new">Rent</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/reservations">My reservations</Link>
+                <Link className="nav-link" to="/reservations">My Rentals</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/cars/new">Add a Car</Link>
