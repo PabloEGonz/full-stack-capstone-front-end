@@ -38,7 +38,7 @@ This is the frontend side of the project. You can go to the backend side followi
 
 https://github.com/ezraermy/Full-Stack-Capstone-Backend
 
-In this project, we are a group of three.
+#### *In this project, we are a group of three*.
 #### Member 1: [Ezra Yehuwalashet](https://github.com/ezraermy)
 #### Member 2: [Ezequiel Gonzalez](https://github.com/PabloEGonz)
 #### Member 2: [Yoseph Addisu](https://github.com/yosaddis)
@@ -46,7 +46,7 @@ In this project, we are a group of three.
 
 ## Kanban Board <a name="kanban-board"></a>
 
-This is the link to the kanban board:
+Link to the kanban board:
 https://github.com/users/ezraermy/projects/3
 
 ![kanban_page1](./src/assets/images/kanban1.png)
@@ -59,24 +59,24 @@ https://github.com/users/ezraermy/projects/3
 <details>
   <summary>Client</summary>
   <ul>
-   <li>HTML</li>
-   <li>CSS</li>
-   <li>React</li>
-   <li>Redux</li>
+   <li>[HTML](https://www.w3schools.com/html/)</li>
+   <>[CSS](https://www.w3schools.com/css/</)li>
+   <li>[React](https://react.dev/)</li>
+   <li>[Redux](https://redux.js.org/)</li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li>Ruby on Rails</li>
+    <li>[Ruby on Rails](https://rubyonrails.org/)</li>
   </ul>
 </details>
 
 <details>
 <summary>Database</summary>
   <ul>
-    <li>PostgreSQL</li>
+    <li>[PostgreSQL](https://www.postgresql.org/)</li>
   </ul>
 </details>
 
