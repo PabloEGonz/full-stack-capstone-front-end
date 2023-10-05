@@ -36,7 +36,7 @@
 
 This is the frontend side of the project. You can go to the backend side following this link:
 
-https://github.com/ezraermy/Full-Stack-Capstone-Backend
+[Full Stack Capstone - Backend](https://github.com/ezraermy/Full-Stack-Capstone-Backend)
 
 #### *In this project, we are a group of three*.
 #### Member 1: [Ezra Yehuwalashet](https://github.com/ezraermy)
