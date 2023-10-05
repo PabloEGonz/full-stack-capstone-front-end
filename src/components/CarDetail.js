@@ -42,12 +42,16 @@ const CarDetail = () => {
               </tr>
             </tbody>
           </table>
+          <h1 className="car-name-details">DESCRIPTION</h1>
+          <p className="car-description">{car.description}</p>
         </div>
       </div>
-      <p className="car-description">{car.description}</p>
       <div className="button-container">
         <Link to={`/reservations/new?carId=${car.id}&carName=${encodeURIComponent(car.name)}`} className="nav-link">
-          <button type="button" className="reserve-button">Reserve</button>
+          <button type="button" className="reserve-button">
+            Reserve
+            <i className="bi bi-arrow-right" />
+          </button>
         </Link>
       </div>
     </div>
