@@ -52,7 +52,7 @@ const CarList = () => {
       <div className="delete-list">
         {cars.map((car) => (
           <div key={car.id} className="delete-list-item">
-            <h2>{car.name}</h2>
+            <h2 className="car-title">{car.name}</h2>
             <img className="item-image" src={car.image} alt={car.name} style={{ maxWidth: '200px' }} />
             <p>
               Type of car:&ensp;
