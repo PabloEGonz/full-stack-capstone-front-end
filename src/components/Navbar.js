@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LogoutBtn from './LogoutBtn';
 import '../css/Navbar.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/images/logo.png';
 
 const Navbar = () => {
   const userPresent = useSelector((state) => state.user.id);

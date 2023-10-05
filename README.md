@@ -45,6 +45,9 @@ In this project, we had a team of 3 members.
 This is the link to the kanban board:
 https://github.com/users/ezraermy/projects/3
 
+![kanban_page1](./src/assets/images/kanban1.png)
+![kanban_page2](./src/assets/images/kanban2.png)
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
