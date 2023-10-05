@@ -16,7 +16,7 @@
 
 .delete-list-item {
   height: 300px;
-  box-shadow: #9acd32 0px 0px 10px 0px;
+  box-shadow: #9acd32 0 0 10px 0;
 }
 
 .button.btn-delete {
