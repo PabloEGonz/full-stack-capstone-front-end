@@ -38,7 +38,11 @@ This is the frontend side of the project. You can go to the backend side followi
 
 https://github.com/ezraermy/Full-Stack-Capstone-Backend
 
-In this project, we had a team of 3 members.
+In this project, we are a group of three.
+#### Member 1: [Ezra Yehuwalashet](https://github.com/ezraermy)
+#### Member 2: [Ezequiel Gonzalez](https://github.com/PabloEGonz)
+#### Member 2: [Yoseph Addisu](https://github.com/yosaddis)
+
 
 ## Kanban Board <a name="kanban-board"></a>
 
