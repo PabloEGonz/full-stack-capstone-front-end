@@ -1,0 +1,33 @@
+.reservation-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input[type="date"]:focus {
+  border-color: var(--light-green);
+  box-shadow: 0 0 10px var(--light-green);
+}
+
+input[type="number"]:focus {
+  border-color: var(--light-green);
+  box-shadow: 0 0 10px var(--light-green);
+}
+
+div.mb-3 select:focus {
+  border-color: var(--light-green);
+  box-shadow: 0 0 10px var(--light-green);
+}
+
+.form-label {
+  color: var(--light-green);
+}
+
+.btn {
+  background-color: var(--light-green);
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #39b61d;
+  color: #fff;
+}
