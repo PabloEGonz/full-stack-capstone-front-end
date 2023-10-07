@@ -41,7 +41,7 @@ This is the frontend side of the project. You can go to the backend side followi
 #### *In this project, we are a group of three*.
 #### Member 1: [Ezra Yehuwalashet](https://github.com/ezraermy)
 #### Member 2: [Ezequiel Gonzalez](https://github.com/PabloEGonz)
-#### Member 3: [Yoseph Addisu](https://github.com/yosaddis)
+#### Member 2: [Yoseph Addisu](https://github.com/yosaddis)
 
 
 ## Kanban Board <a name="kanban-board"></a>
