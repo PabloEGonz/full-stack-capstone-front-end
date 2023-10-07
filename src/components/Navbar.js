@@ -7,6 +7,12 @@ import logo from '../assets/images/logo.png';
 
 const Navbar = () => {
   const userPresent = useSelector((state) => state.user.id);
+  const navbarSwtichRef = React.createRef();
+
+  const handleNavbarToggle = () => {
+    navbarSwtichRef.current.classList.toggle('open');
+  };
+
   return (
     <nav className="navbar navbar-body bg-body-tertiary fixed-top">
       <div className="container-fluid">
@@ -26,22 +32,22 @@ const Navbar = () => {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item">
-                <Link className="nav-link" to="/">Cars</Link>
+                <Link className="nav-link" to="/" onClick={handleNavbarToggle}>Cars</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/session#login">Login</Link>
+                <Link className="nav-link" to="/session#login" onClick={handleNavbarToggle}>Login</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/reservations/new">Rent</Link>
+                <Link className="nav-link" to="/reservations/new" onClick={handleNavbarToggle}>Rent</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/reservations">My Rentals</Link>
+                <Link className="nav-link" to="/reservations" onClick={handleNavbarToggle}>My Rentals</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/cars/new">Add a Car</Link>
+                <Link className="nav-link" to="/cars/new" onClick={handleNavbarToggle}>Add a Car</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/cars/delete">Delete Car</Link>
+                <Link className="nav-link" to="/cars/delete" onClick={handleNavbarToggle}>Delete Car</Link>
               </li>
               {
               userPresent && <LogoutBtn />
